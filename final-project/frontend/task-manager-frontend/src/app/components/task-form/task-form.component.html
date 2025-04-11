@@ -1,0 +1,16 @@
+
+<div class="container mt-4">
+    <h2>➕ Add Task</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input id="title" [(ngModel)]="task.title" name="title" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">Description</label>
+        <input id="desc" [(ngModel)]="task.description" name="description" class="form-control">
+      </div>
+      <button class="btn btn-primary" type="submit">Add Task</button>
+    </form>
+  </div>
+  

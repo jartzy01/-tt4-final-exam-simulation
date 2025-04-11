@@ -1,0 +1,25 @@
+
+<div class="container mt-4">
+    <h2>📋 Task List</h2>
+    <ul class="list-group">
+      <li *ngFor="let task of tasks" class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+            <label>
+                <input
+                  type="checkbox"
+                  [checked]="task.completed"
+                  (change)="toggleComplete(task)"
+                  [attr.aria-label]="'Toggle task: ' + task.title"
+                  title="Toggle task completion"
+                />
+              </label>
+          <strong [ngClass]="{ 'text-decoration-line-through': task.completed }">
+            {{ task.title }}
+          </strong>
+          <div class="text-muted small">{{ task.description }}</div>
+        </div>
+        <button class="btn btn-danger btn-sm" (click)="deleteTask(task.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  
